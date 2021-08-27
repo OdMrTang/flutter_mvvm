@@ -1,13 +1,12 @@
 import 'package:jvtd_shop_client/commons/constants/index.dart';
-import 'package:jvtd_shop_client/view_model/login_model.dart';
 
 //短信验证码登录
-class LoginPhoneCodePage extends StatefulWidget {
+class LoginPhonePasswordPage extends StatefulWidget {
   @override
-  _LoginPhoneCodePageState createState() => _LoginPhoneCodePageState();
+  _LoginPhonePasswordPageState createState() => _LoginPhonePasswordPageState();
 }
 
-class _LoginPhoneCodePageState extends State<LoginPhoneCodePage>{
+class _LoginPhonePasswordPageState extends State<LoginPhonePasswordPage>{
   TextEditingController _phoneController;
   TextEditingController _passwordController;
   final _pwdFocus = FocusNode();
@@ -31,7 +30,6 @@ class _LoginPhoneCodePageState extends State<LoginPhoneCodePage>{
   Widget build(BuildContext context) {
     return ProviderWidget<LoginModel>(
         onModelReady: (model) {
-          debugPrint("login onModelReady ...");
           model.initData();
         },
         builder: (context, model, child) {

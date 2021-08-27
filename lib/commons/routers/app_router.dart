@@ -8,13 +8,13 @@ import 'package:jvtd_shop_client/uis/pages/order/order_home_page.dart';
 import 'package:jvtd_shop_client/uis/pages/shop/choice/shop_choice_page.dart';
 import 'package:jvtd_shop_client/uis/pages/splash_page.dart';
 import 'package:jvtd_shop_client/uis/pages/tab/tab_nav_page.dart';
-import 'package:jvtd_shop_client/uis/pages/user/login/login_phone_code.dart';
+import 'package:jvtd_shop_client/uis/pages/user/login/login_phone_password.dart';
 import 'package:jvtd_shop_client/uis/pages/user_home_page.dart';
 
 //配置路由
 final routes = {
   RouteName.splash : (context) => SplashPage(),//跳转到启动页
-  RouteName.login : (context) => LoginPhoneCodePage(),//跳转到启动页
+  RouteName.login : (context) => LoginPhonePasswordPage(),//跳转到启动页
   RouteName.tab : (context) => TabNavigator(),//跳转到tab页面
   RouteName.main : (context) => MainHomePage(),//跳转到启动页
   RouteName.customerService : (context) => CustomerServiceHomepage(),//跳转到启动页
@@ -50,7 +50,7 @@ var onGenerateRoute = (RouteSettings settings) {
 //       case RouteName.splash:
 //         return NoAnimRouteBuilder(SplashPage());
 //       case RouteName.login:
-//         return CupertinoPageRoute(builder: (_) => LoginPhoneCodePage());
+//         return CupertinoPageRoute(builder: (_) => LoginPhonePasswordPage());
 //       case RouteName.tab:
 //         return CupertinoPageRoute(builder: (_) => TabNavigator());
 //       case RouteName.main:

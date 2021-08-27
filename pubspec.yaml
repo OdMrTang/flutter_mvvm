@@ -38,8 +38,6 @@ dependencies:
   url_launcher: ^6.0.9
   # 本地json对象存储
   localstorage: ^4.0.0+1
-  # ui toast
-  oktoast: ^2.1.7
   # refresh
   pull_to_refresh: ^1.6.4
   cached_network_image: ^3.0.0

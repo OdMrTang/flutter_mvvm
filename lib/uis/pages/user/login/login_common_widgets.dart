@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:jvtd_shop_client/commons/constants/index.dart';
 
@@ -9,7 +10,8 @@ class LoginButton extends StatelessWidget {
   final type;
   final _CallBack callback;
 
-  LoginButton(this.nameController, this.passwordController, this.type,this.callback);
+  LoginButton(this.nameController, this.passwordController, this.type,
+      this.callback);
 
   bool isBusy = false;
 
@@ -18,15 +20,20 @@ class LoginButton extends StatelessWidget {
     return LoginButtonWidget(
       child: Text(
         "登录",
-        style: TextStyle(color: KColor.loginBottonTextColor,fontWeight: FontWeight.w500),
+        style: TextStyle(
+            color: KColor.loginBottonTextColor, fontWeight: FontWeight.w500),
       ),
       onPressed: () {
-        if (nameController.text.toString().isEmpty) {
-          ToastUtils.showToastText(KString.inputPhone);
-        } else if (passwordController.text.toString().isEmpty) {
-          ToastUtils.showToastText(KString.inputPwd);
+        if (nameController.text
+            .toString()
+            .isEmpty) {
+          BotToast.showText(text: KString.inputPhone);
+        } else if (passwordController.text
+            .toString()
+            .isEmpty) {
+          BotToast.showText(text: KString.inputPwd);
         } else {
-          if(callback!=null){
+          if (callback != null) {
             callback();
           }
         }
@@ -72,17 +79,16 @@ class LoginTextField extends StatefulWidget {
   final int maxLength;
   final TextInputType inputType;
 
-  LoginTextField(
-      {this.label,
-      this.icon,
-      this.controller,
-      this.obscureText: false,
-      this.validator,
-      this.focusNode,
-      this.textInputAction,
-      this.onFieldSubmitted,
-      this.maxLength,
-      this.inputType});
+  LoginTextField({this.label,
+    this.icon,
+    this.controller,
+    this.obscureText: false,
+    this.validator,
+    this.focusNode,
+    this.textInputAction,
+    this.onFieldSubmitted,
+    this.maxLength,
+    this.inputType});
 
   @override
   _LoginTextFieldState createState() => _LoginTextFieldState();
@@ -118,45 +124,46 @@ class _LoginTextFieldState extends State<LoginTextField> {
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       child: ValueListenableBuilder(
         valueListenable: obscureNotifier,
-        builder: (context, value, child) => TextFormField(
-          textCapitalization: TextCapitalization.none,
-          maxLength: widget.maxLength,
-          maxLengthEnforced: true,
-          keyboardType: widget.inputType,
-          controller: controller,
-          obscureText: value,
-          // validator: (text) {
-          //   var validator = widget.validator ?? (_) => null;
-          //   return text.trim().length > 0 ? validator(text) : "请填写内容";
-          // },
-          focusNode: widget.focusNode,
-          textInputAction: widget.textInputAction,
-          onFieldSubmitted: widget.onFieldSubmitted,
-          decoration: InputDecoration(
-            counterStyle: TextStyle(
-              height: double.minPositive,
-            ),
-            counterText: "",
-            // prefixIcon: Icon(widget.icon, color: theme.accentColor, size: 22),
-            hintText: widget.label,
-            hintStyle: TextStyle(fontSize: 16),
-            suffixIcon: LoginTextFieldSuffixIcon(
+        builder: (context, value, child) =>
+            TextFormField(
+              textCapitalization: TextCapitalization.none,
+              maxLength: widget.maxLength,
+              maxLengthEnforced: true,
+              keyboardType: widget.inputType,
               controller: controller,
-              obscureText: widget.obscureText,
-              obscureNotifier: obscureNotifier,
+              obscureText: value,
+              // validator: (text) {
+              //   var validator = widget.validator ?? (_) => null;
+              //   return text.trim().length > 0 ? validator(text) : "请填写内容";
+              // },
+              focusNode: widget.focusNode,
+              textInputAction: widget.textInputAction,
+              onFieldSubmitted: widget.onFieldSubmitted,
+              decoration: InputDecoration(
+                counterStyle: TextStyle(
+                  height: double.minPositive,
+                ),
+                counterText: "",
+                // prefixIcon: Icon(widget.icon, color: theme.accentColor, size: 22),
+                hintText: widget.label,
+                hintStyle: TextStyle(fontSize: 16),
+                suffixIcon: LoginTextFieldSuffixIcon(
+                  controller: controller,
+                  obscureText: widget.obscureText,
+                  obscureNotifier: obscureNotifier,
+                ),
+                enabledBorder: UnderlineInputBorder(
+                  //光标未选中颜色
+                  borderSide: BorderSide(color: Colors.grey[100]),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  //光标选中颜色
+                  borderSide: BorderSide(color: Colors.orange),
+                ),
+                //输入框边距线
+                // enabledBorder: InputDecoration()
+              ),
             ),
-            enabledBorder: UnderlineInputBorder(
-              //光标未选中颜色
-              borderSide: BorderSide(color: Colors.grey[100]),
-            ),
-            focusedBorder: UnderlineInputBorder(
-              //光标选中颜色
-              borderSide: BorderSide(color: Colors.orange),
-            ),
-            //输入框边距线
-            // enabledBorder: InputDecoration()
-          ),
-        ),
       ),
     );
   }
@@ -189,11 +196,12 @@ class LoginTextFieldSuffixIcon extends StatelessWidget {
             },
             child: ValueListenableBuilder(
               valueListenable: obscureNotifier,
-              builder: (context, value, child) => Icon(
-                CupertinoIcons.eye,
-                size: 20,
-                color: value ? theme.hintColor : theme.accentColor,
-              ),
+              builder: (context, value, child) =>
+                  Icon(
+                    CupertinoIcons.eye,
+                    size: 20,
+                    color: value ? theme.hintColor : theme.accentColor,
+                  ),
             ),
           ),
         ),
@@ -266,17 +274,17 @@ class LoginPanelForm extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
       color: Colors.white,
       // decoration: ShapeDecoration(
-          // shape: RoundedRectangleBorder(
-          //     borderRadius: BorderRadius.all(Radius.circular(12))),
-          // color: Theme.of(context).cardColor,
-          // color: Colors.white,
-          // shadows: [
-          //   BoxShadow(
-          //       color: Theme.of(context).primaryColor.withAlpha(20),
-          //       offset: Offset(1.0, 1.0),
-          //       blurRadius: 10.0,
-          //       spreadRadius: 3.0),
-          // ]
+      // shape: RoundedRectangleBorder(
+      //     borderRadius: BorderRadius.all(Radius.circular(12))),
+      // color: Theme.of(context).cardColor,
+      // color: Colors.white,
+      // shadows: [
+      //   BoxShadow(
+      //       color: Theme.of(context).primaryColor.withAlpha(20),
+      //       offset: Offset(1.0, 1.0),
+      //       blurRadius: 10.0,
+      //       spreadRadius: 3.0),
+      // ]
       // ),
       child: child,
     );

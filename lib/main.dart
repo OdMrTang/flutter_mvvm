@@ -4,6 +4,7 @@ import 'package:jvtd_shop_client/commons/managers/provider_manager.dart';
 import 'package:jvtd_shop_client/commons/managers/storage_manager.dart';
 import 'package:jvtd_shop_client/commons/routers/app_router.dart';
 import 'package:jvtd_shop_client/commons/routers/router.dart';
+import 'package:jvtd_shop_client/commons/utils/custom_hide_keyboard.dart';
 import 'package:jvtd_shop_client/uis/pages/splash_page.dart';
 import 'package:jvtd_shop_client/view_model/theme_model.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -54,29 +55,31 @@ class AppState extends State<App> {
                 hideFooterWhenNotFull: true, //列表数据不满一页,不触发加载更多
                 child: Opacity(
                   opacity: 0.9,
-                  child: Center(
-                    child: ScreenUtilInit(
-                        designSize: Size(720, 1280),
-                        builder: () => MaterialApp(
-                            debugShowCheckedModeBanner: false,
-                            builder: BotToastInit(),
-                            navigatorObservers: [BotToastNavigatorObserver()],
-                            theme: themeModel.themeData(),
-                            darkTheme:
-                                themeModel.themeData(platformDarkMode: true),
-                            localizationsDelegates: const [
-                              // S.delegate,
-                              RefreshLocalizations.delegate, //下拉刷新
-                              // GlobalCupertinoLocalizations.delegate,
-                              // GlobalMaterialLocalizations.delegate,
-                              // GlobalWidgetsLocalizations.delegate
-                            ],
-                            initialRoute: RouteName.login,
-                            //路由跳转地址
-                            onGenerateRoute: onGenerateRoute,
-                            //配置路由
-                            // supportedLocales: KString. S.supportedLocales.supportedLocales,
-                            home: SplashPage())),
+                  child: CustomHideKeyboard(
+                    child: Center(
+                      child: ScreenUtilInit(
+                          designSize: Size(720, 1280),
+                          builder: () => MaterialApp(
+                              debugShowCheckedModeBanner: false,
+                              builder: BotToastInit(),
+                              navigatorObservers: [BotToastNavigatorObserver()],
+                              theme: themeModel.themeData(),
+                              darkTheme:
+                              themeModel.themeData(platformDarkMode: true),
+                              localizationsDelegates: const [
+                                // S.delegate,
+                                RefreshLocalizations.delegate, //下拉刷新
+                                // GlobalCupertinoLocalizations.delegate,
+                                // GlobalMaterialLocalizations.delegate,
+                                // GlobalWidgetsLocalizations.delegate
+                              ],
+                              initialRoute: RouteName.login,
+                              //路由跳转地址
+                              onGenerateRoute: onGenerateRoute,
+                              //配置路由
+                              // supportedLocales: KString. S.supportedLocales.supportedLocales,
+                              home: SplashPage())),
+                    ),
                   ),
                 ),
               );

@@ -17,4 +17,5 @@ class LoginModel extends ViewStateModel {
       Navigator.of(context).pushNamed(RouteName.tab);
     });
   }
+
 }
