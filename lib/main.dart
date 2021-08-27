@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:jvtd_shop_client/commons/managers/provider_manager.dart';
 import 'package:jvtd_shop_client/commons/managers/storage_manager.dart';
@@ -58,6 +59,8 @@ class AppState extends State<App> {
                         designSize: Size(720, 1280),
                         builder: () => MaterialApp(
                             debugShowCheckedModeBanner: false,
+                            builder: BotToastInit(),
+                            navigatorObservers: [BotToastNavigatorObserver()],
                             theme: themeModel.themeData(),
                             darkTheme:
                                 themeModel.themeData(platformDarkMode: true),
@@ -68,7 +71,7 @@ class AppState extends State<App> {
                               // GlobalMaterialLocalizations.delegate,
                               // GlobalWidgetsLocalizations.delegate
                             ],
-                            initialRoute: RouteName.splash,
+                            initialRoute: RouteName.login,
                             //路由跳转地址
                             onGenerateRoute: onGenerateRoute,
                             //配置路由

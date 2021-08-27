@@ -27,26 +27,23 @@ class LoginRegisterPageState extends State<LoginRegisterPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Container(
-                    color: Theme.of(context).primaryColor,
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: <Widget>[
-                          RegisterPanel()
-                        ],
-                      ),
-                    ),
-                  )
-                ])));
+              Container(
+                color: Theme.of(context).primaryColor,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[RegisterPanel()],
+                  ),
+                ),
+              )
+            ])));
   }
 }
-
 
 class RegisterPanel extends StatefulWidget {
   @override
@@ -114,7 +111,7 @@ class _RegisterPanelState extends State<RegisterPanel> {
     var userModel = Provider.of<UserModel>(context);
     return ProviderWidget<LoginModel>(
       model: LoginModel(Provider.of(context)),
-      onModelReady: (model){},
+      onModelReady: (model) {},
       builder: (context, model, child) {
         return Form(
           onWillPop: () async {
@@ -154,28 +151,36 @@ class _RegisterPanelState extends State<RegisterPanel> {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 9,vertical: 2),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 9, vertical: 2),
                         child: RaisedButton(
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Text(_verifyStr,style: TextStyle(color: Colors.white),),
+                          child: Text(
+                            _verifyStr,
+                            style: TextStyle(color: Colors.white),
+                          ),
                           onPressed: isSent
                               ? null
                               : () {
-                            UserRepository.getCode(_usernameController.text).then((result){
-                              showToast("验证码已发送。");
-                              setState(() {
-                                isSent = true;
-                              });
-                              _startTimer();
-                            });
-                          },
+                                  UserRepository.getCode(
+                                          _usernameController.text)
+                                      .then((result) {
+                                    showToast("验证码已发送。");
+                                    setState(() {
+                                      isSent = true;
+                                    });
+                                    _startTimer();
+                                  });
+                                },
                           elevation: 0,
                           focusElevation: 0,
-                          color: Theme.of(context).primaryColor.withOpacity(0.9),
+                          color:
+                              Theme.of(context).primaryColor.withOpacity(0.9),
                           textColor: Colors.white,
-                          disabledColor: Theme.of(context).primaryColor.withOpacity(0.5),
+                          disabledColor:
+                              Theme.of(context).primaryColor.withOpacity(0.5),
                         ),
                       )
                     ],

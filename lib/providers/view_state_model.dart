@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:jvtd_shop_client/commons/nets/response_exception.dart';
@@ -47,11 +48,14 @@ class ViewStateModel with ChangeNotifier {
 
   bool get unAuthorized => viewState == ViewState.unAuthorized;
 
+
   void setIdle() {
+    BotToast.closeAllLoading();
     viewState = ViewState.idle;
   }
 
   void setBusy() {
+    BotToast.showLoading();
     viewState = ViewState.busy;
   }
 

@@ -168,7 +168,7 @@ class AnimatedAndroidLogo extends AnimatedWidget {
 }
 
 Future<void> nextPage(context) async {
-  Navigator.of(context).pushReplacementNamed(RouteName.tab);
+  Navigator.of(context).pushReplacementNamed(RouteName.login);
   // var isLogin = StorageManager.sharedPreferences.getBool(Config.IS_LOGIN_KEY);
   // if (isLogin == null) {
   //   String token = StorageManager.sharedPreferences.getString(Config.TOKEN_KEY);

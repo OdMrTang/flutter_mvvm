@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:jvtd_shop_client/commons/constants/index.dart';
 
-
+typedef _CallBack = void Function();
 //登录按钮功能
 class LoginButton extends StatelessWidget {
   final nameController;
   final passwordController;
   final type;
+  final _CallBack callback;
 
-  LoginButton(this.nameController, this.passwordController, this.type);
+  LoginButton(this.nameController, this.passwordController, this.type,this.callback);
 
   bool isBusy = false;
 
@@ -25,7 +26,9 @@ class LoginButton extends StatelessWidget {
         } else if (passwordController.text.toString().isEmpty) {
           ToastUtils.showToastText(KString.inputPwd);
         } else {
-          Navigator.of(context).pushNamed(RouteName.tab);
+          if(callback!=null){
+            callback();
+          }
         }
       },
     );

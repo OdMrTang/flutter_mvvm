@@ -136,7 +136,7 @@ class _LoginPhoneCodePanelState extends State<LoginPhoneCodePanel> {
                       )
                     ],
                   ),
-                  LoginButton(_phoneController, _codeController, 1),
+                  LoginButton(_phoneController, _codeController, 1,(){}),
                 ]),
           )
         ],

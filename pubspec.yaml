@@ -52,6 +52,7 @@ dependencies:
   common_utils: ^1.1.3
   quiver: ^2.1.3
   shimmer: ^1.0.0 #骨灰架刷新效果
+  bot_toast: ^4.0.1
 
 dev_dependencies:
   flutter_test:

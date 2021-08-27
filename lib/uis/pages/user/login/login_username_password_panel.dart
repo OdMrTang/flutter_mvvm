@@ -73,7 +73,7 @@ class _LoginUsernamePasswordPanelState
                     focusNode: _pwdFocus,
                     textInputAction: TextInputAction.done,
                   ),
-                  LoginButton(_usernameController, _passwordController, 0),
+                  LoginButton(_usernameController, _passwordController, 0,(){}),
                 ]),
           )
         ],
