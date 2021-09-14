@@ -1,4 +1,4 @@
-class VerificationInfo {
+class VerificationInfoModel {
   int id;
   School school;
   Type type;
@@ -32,7 +32,7 @@ class VerificationInfo {
   String idcardNum;
   int user;
 
-  VerificationInfo(
+  VerificationInfoModel(
       {this.id,
       this.school,
       this.type,
@@ -66,7 +66,7 @@ class VerificationInfo {
       this.idcardNum,
       this.user});
 
-  VerificationInfo.fromJson(Map<String, dynamic> json) {
+  VerificationInfoModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     school =
         json['school'] != null ? new School.fromJson(json['school']) : null;

@@ -1,4 +1,4 @@
-class Withdrawaccount {
+class WithdrawaccountModel {
   int id;
   String alyPayAccount;
   String weixinPayAccount;
@@ -6,7 +6,7 @@ class Withdrawaccount {
   String updateDate;
   int user;
 
-  Withdrawaccount(
+  WithdrawaccountModel(
       {this.id,
         this.alyPayAccount,
         this.weixinPayAccount,
@@ -14,7 +14,7 @@ class Withdrawaccount {
         this.updateDate,
         this.user});
 
-  Withdrawaccount.fromJson(Map<String, dynamic> json) {
+  WithdrawaccountModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     alyPayAccount = json['aly_pay_account'];
     weixinPayAccount = json['weixin_pay_account'];

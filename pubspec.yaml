@@ -42,14 +42,12 @@ dependencies:
   pull_to_refresh: ^1.6.4
   cached_network_image: ^3.0.0
   flutter_screenutil: ^5.0.0+2 #适配
-  image_gallery_saver:
-    git:
-      url: https://github.com/hui-z/image_gallery_saver.git
+  image_gallery_saver: '^1.6.9' #图片下载
   #网络情况检测
   connectivity: ^0.4.4
-  common_utils: ^1.1.3
-  quiver: ^2.1.3
-  shimmer: ^1.0.0 #骨灰架刷新效果
+  common_utils: ^1.1.3 #常用工具
+#  quiver: ^2.1.3
+#  shimmer: ^1.0.0 #骨灰架刷新效果
   bot_toast: ^4.0.1
 
 dev_dependencies:

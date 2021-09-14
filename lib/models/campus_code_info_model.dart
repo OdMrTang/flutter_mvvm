@@ -1,9 +1,9 @@
-class CampusCodeInfoList {
+class CampusCodeInfoListModel {
   CampusCodeInfo data;
 
-  CampusCodeInfoList({this.data});
+  CampusCodeInfoListModel({this.data});
 
-  CampusCodeInfoList.fromJson(Map<String, dynamic> json) {
+  CampusCodeInfoListModel.fromJson(Map<String, dynamic> json) {
     data = json['data'] != null ? new CampusCodeInfo.fromJson(json['data']) : null;
   }
 

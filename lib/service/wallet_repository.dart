@@ -1,6 +1,6 @@
 import 'package:jvtd_shop_client/commons/nets/http.dart';
-import 'package:jvtd_shop_client/models/campus_code_info.dart';
-import 'package:jvtd_shop_client/models/user.dart';
+import 'package:jvtd_shop_client/models/campus_code_info_model.dart';
+import 'package:jvtd_shop_client/models/user_model.dart';
 
 class WalletRepository {
   static Future withdraw(code) async {
@@ -26,7 +26,7 @@ class WalletRepository {
           "month": month == null ? '' : month
         },
         method: 'get');
-    return CampusCodeInfoList.fromJson(response.data).data.data;
+    return CampusCodeInfoListModel.fromJson(response.data).data.data;
   }
 
   static Future fetchCampusCodeInfo({int year, int month}) async {
@@ -37,6 +37,6 @@ class WalletRepository {
           "month": month == null ? '' : month
         },
         method: 'get');
-    return CampusCodeInfoList.fromJson(response.data).data;
+    return CampusCodeInfoListModel.fromJson(response.data).data;
   }
 }

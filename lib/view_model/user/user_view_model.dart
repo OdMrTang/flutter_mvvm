@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:jvtd_shop_client/commons/constants/config.dart';
 import 'package:jvtd_shop_client/commons/managers/storage_manager.dart';
-import 'package:jvtd_shop_client/models/user.dart';
+import 'package:jvtd_shop_client/models/user_model.dart';
 import 'package:jvtd_shop_client/service/user_repository.dart';
 import 'package:jvtd_shop_client/service/wallet_repository.dart';
-import 'package:oktoast/oktoast.dart';
+import 'package:bot_toast/bot_toast.dart';
 
-class UserModel extends ChangeNotifier {
+class UserViewModel extends ChangeNotifier {
   static const String kUser = Config.USER_KEY;
 
   User _user;
@@ -46,7 +46,7 @@ class UserModel extends ChangeNotifier {
       });
     } catch (e) {
       Future.microtask(() {
-        showToast(e.response.data[0], context: context);
+        BotToast.showText(text:e.response.data[0]);
       });
     }
     var newUser = await UserRepository.getUserInfo(username);
@@ -67,11 +67,11 @@ class UserModel extends ChangeNotifier {
       var newUser = await UserRepository.getUserInfo(username);
       saveUser(newUser);
       Future.microtask(() {
-        showToast("信息修改成功！", context: context);
+        BotToast.showText(text:"信息修改成功！");
       });
     } catch (e) {
       Future.microtask(() {
-        showToast(e.response.data[0], context: context);
+        BotToast.showText(text:e.response.data[0]);
       });
     }
 
@@ -84,11 +84,11 @@ class UserModel extends ChangeNotifier {
       var newUser = await UserRepository.getUserInfo(username);
       saveUser(newUser);
       Future.microtask(() {
-        showToast("信息修改成功！", context: context);
+        BotToast.showText(text:"信息修改成功！");
       });
     } catch (e) {
       Future.microtask(() {
-        showToast(e.response.data[0], context: context);
+        BotToast.showText(text:e.response.data[0]);
       });
     }
   }

@@ -1,7 +1,7 @@
 
 import 'package:jvtd_shop_client/providers/view_state_model.dart';
 
-class MainHomeModel extends ViewStateModel{
+class MainHomeViewModel extends ViewStateModel{
 
   //更新值
   String _value = "首页";

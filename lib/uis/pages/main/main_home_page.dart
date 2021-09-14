@@ -16,7 +16,7 @@ class _MainpageState extends State<MainHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return ProviderWidget<MainHomeModel>(
+    return ProviderWidget<MainHomeViewModel>(
         onModelReady: (model){},
         builder: (context, model, child) {
           return Scaffold(
@@ -32,6 +32,6 @@ class _MainpageState extends State<MainHomePage> {
             ),
           );
         },
-        model: MainHomeModel());
+        model: MainHomeViewModel());
   }
 }

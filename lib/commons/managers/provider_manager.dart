@@ -1,5 +1,6 @@
-import 'package:jvtd_shop_client/view_model/theme_model.dart';
-import 'package:jvtd_shop_client/view_model/user/user_model.dart';
+import 'package:jvtd_shop_client/view_model/theme_view_model.dart';
+import 'package:jvtd_shop_client/view_model/user/login_view_model.dart';
+import 'package:jvtd_shop_client/view_model/user/user_view_model.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -10,14 +11,14 @@ List<SingleChildWidget> providers = [
 
 /// 独立的model
 List<SingleChildWidget> independentServices = [
-  ChangeNotifierProvider<ThemeModel>(
-    create: (context) => ThemeModel(),
+  ChangeNotifierProvider<ThemeViewModel>(
+    create: (context) => ThemeViewModel(),
   ),
-  ChangeNotifierProvider<UserModel>(
-    create: (context) => UserModel(),
+  ChangeNotifierProvider<UserViewModel>(
+    create: (context) => UserViewModel(),
   ),
-  ChangeNotifierProvider<UserModel>(
-    create: (context) => UserModel(),
+  ChangeNotifierProvider<LoginViewModel>(
+    create: (context) => LoginViewModel(),
   ),
 ];
 

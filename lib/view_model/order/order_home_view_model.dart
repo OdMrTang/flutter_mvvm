@@ -1,8 +1,8 @@
-import 'package:jvtd_shop_client/models/test_home.dart';
+import 'package:jvtd_shop_client/models/test_home_model.dart';
 import 'package:jvtd_shop_client/providers/view_state_refresh_list_with_date_filter.dart';
 import 'package:jvtd_shop_client/service/test_repository.dart';
 
-class OrderHomeModel extends ViewStateRefreshListDateFilterModel{
+class OrderHomeViewModel extends ViewStateRefreshListDateFilterModel{
 
   List<String> _dataList = [];
   List<String> get dataList => _dataList;

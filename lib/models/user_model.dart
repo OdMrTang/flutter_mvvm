@@ -1,9 +1,9 @@
-import 'package:jvtd_shop_client/models/shop.dart';
-import 'package:jvtd_shop_client/models/withdraw_account.dart';
+import 'package:jvtd_shop_client/models/shop_model.dart';
+import 'package:jvtd_shop_client/models/withdraw_account_model.dart';
 
 class User {
   Shop shop;
-  Withdrawaccount withdrawaccount;
+  WithdrawaccountModel withdrawaccount;
   String username;
   int id;
   var timeCode;
@@ -19,7 +19,7 @@ class User {
     timeCode = json['time_code'];
     campusCode = json['campus_code'];
     withdrawaccount = json['withdrawaccount'] != null
-        ? new Withdrawaccount.fromJson(json['withdrawaccount'])
+        ? new WithdrawaccountModel.fromJson(json['withdrawaccount'])
         : null;
   }
 
@@ -40,7 +40,7 @@ class User {
 
   //自造数据，用来展示
   static testData(){
-    Withdrawaccount mWithdrawaccount = Withdrawaccount(id:1001,alyPayAccount: '100',weixinPayAccount:'101',
+    WithdrawaccountModel mWithdrawaccount = WithdrawaccountModel(id:1001,alyPayAccount: '100',weixinPayAccount:'101',
         date:'2020-10-10',updateDate:'2020-10-11',user:11);
     Shop mShop = Shop(isOpen: true,likeCommentNum: 100 , commentNumSum: 98);
     User mUser = User(shop:mShop,username:"张三",id:1,timeCode:'12',campusCode:'23',withdrawaccount:mWithdrawaccount);

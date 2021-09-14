@@ -1,5 +1,5 @@
 import 'package:jvtd_shop_client/commons/nets/http.dart';
-import 'package:jvtd_shop_client/models/test_home.dart';
+import 'package:jvtd_shop_client/models/test_home_model.dart';
 
 class TestRepository{
 

@@ -2,7 +2,9 @@
 class Config {
   static bool DEBUG = true;
 
-
+  //  开发域名：
+  static const String BASE_URL = "https://shop.jvtdtest.top/api/";
+  //发布域名
 
 //  static const PAGE_SIZE = 20;
 
@@ -15,5 +17,11 @@ class Config {
 
   //缓存key
   static const LOCAL_STORAGE_KEY = "LocalStorage";
+
+  //设计稿尺寸
+  //宽
+  static const DESIGNSIZE_WIDTH = 720.0;
+  //高
+  static const DESIGNSIZE_HEIGHT = 1280.0;
 
 }

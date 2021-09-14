@@ -1,4 +1,4 @@
-class UserInfo {
+class UserInfoModel {
   int id;
   String sex;
   String headImg;
@@ -9,7 +9,7 @@ class UserInfo {
   String addTime;
   int user;
 
-  UserInfo(
+  UserInfoModel(
       {this.id,
         this.sex,
         this.headImg,
@@ -20,7 +20,7 @@ class UserInfo {
         this.addTime,
         this.user});
 
-  UserInfo.fromJson(Map<String, dynamic> json) {
+  UserInfoModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     sex = json['sex'];
     headImg = json['head_img'];

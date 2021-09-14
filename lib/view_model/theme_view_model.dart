@@ -8,7 +8,7 @@ import 'package:jvtd_shop_client/uis/helpers/theme_helper.dart';
 
 //const Color(0xFF5394FF),
 
-class ThemeModel with ChangeNotifier {
+class ThemeViewModel with ChangeNotifier {
   static const kThemeColorIndex = 'kThemeColorIndex';
   static const kThemeUserDarkMode = 'kThemeUserDarkMode';
   static const kFontIndex = 'kFontIndex';
@@ -24,7 +24,7 @@ class ThemeModel with ChangeNotifier {
   /// 当前字体索引
   int _fontIndex;
 
-  ThemeModel() {
+  ThemeViewModel() {
     /// 用户选择的明暗模式
     _userDarkMode =
         StorageManager.sharedPreferences.getBool(kThemeUserDarkMode) ?? false;

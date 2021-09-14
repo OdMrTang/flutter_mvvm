@@ -1,13 +1,13 @@
 
 
-import 'package:jvtd_shop_client/models/school.dart';
-import 'package:jvtd_shop_client/models/shop_type.dart';
+import 'package:jvtd_shop_client/models/school_model.dart';
+import 'package:jvtd_shop_client/models/shop_type_model.dart';
 
 class Shop {
   int id;
   bool isOpen;
-  ShopType type;
-  School school;
+  ShopTypeModel type;
+  SchoolModel school;
   String name;
   String phoneNum;
   int sellNumMounth;
@@ -74,9 +74,9 @@ class Shop {
   Shop.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     isOpen = json['is_open'];
-    type = json['type'] != null ? new ShopType.fromJson(json['type']) : null;
+    type = json['type'] != null ? new ShopTypeModel.fromJson(json['type']) : null;
     school =
-    json['school'] != null ? new School.fromJson(json['school']) : null;
+    json['school'] != null ? new SchoolModel.fromJson(json['school']) : null;
     name = json['name'];
     phoneNum = json['phone_num'];
     sellNumMounth = json['sell_num_mounth'];

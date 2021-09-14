@@ -1,4 +1,4 @@
-class ShopType {
+class ShopTypeModel {
   int id;
   int status;
   String name;
@@ -8,7 +8,7 @@ class ShopType {
   String updateDate;
   int fatherType;
 
-  ShopType(
+  ShopTypeModel(
       {this.id,
         this.status,
         this.name,
@@ -18,7 +18,7 @@ class ShopType {
         this.updateDate,
         this.fatherType});
 
-  ShopType.fromJson(Map<String, dynamic> json) {
+  ShopTypeModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     status = json['status'];
     name = json['name'];

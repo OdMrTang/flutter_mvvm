@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:jvtd_shop_client/commons/nets/response_exception.dart';
-import 'package:oktoast/oktoast.dart';
+import 'package:bot_toast/bot_toast.dart';
 
 import 'view_state.dart';
 
@@ -99,7 +99,7 @@ class ViewStateModel with ChangeNotifier {
     if (viewStateError != null || message != null) {
       message ??= viewStateError.message;
       Future.microtask(() {
-        showToast(message, context: context);
+        BotToast.showText(text: message);
       });
     }
   }

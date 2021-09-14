@@ -28,7 +28,7 @@ class _LoginPhonePasswordPageState extends State<LoginPhonePasswordPage>{
 
   @override
   Widget build(BuildContext context) {
-    return ProviderWidget<LoginModel>(
+    return ProviderWidget<LoginViewModel>(
         onModelReady: (model) {
           model.initData();
         },
@@ -52,16 +52,6 @@ class _LoginPhonePasswordPageState extends State<LoginPhonePasswordPage>{
                           },
                           child: Icon(Icons.close),
                         ),
-                      ),
-                      Container(
-                        height: 52,
-                        alignment: Alignment.centerLeft,
-                        margin: EdgeInsets.only(left: 80.w),
-                        child: Image.asset(
-                            ImageHelper.wrapAssets('login_icon.png'),
-                            width: 120.w,
-                            height: 46.h,
-                            fit: BoxFit.contain),
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 80.w, top: 23),
@@ -119,7 +109,7 @@ class _LoginPhonePasswordPageState extends State<LoginPhonePasswordPage>{
             ),
           );
         },
-        model: LoginModel());
+        model: LoginViewModel());
   }
 
 }

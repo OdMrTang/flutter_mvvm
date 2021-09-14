@@ -9,7 +9,7 @@ class ShopChoicePage extends StatefulWidget {
 class _ShopChoicePageState extends State<ShopChoicePage> {
   @override
   Widget build(BuildContext context) {
-    return ProviderWidget<ShopChoiceModel>(
+    return ProviderWidget<ShopChoiceViewModel>(
         builder: (context, model, child) {
           return Scaffold(
               backgroundColor: KColor.splashColor,
@@ -55,6 +55,6 @@ class _ShopChoicePageState extends State<ShopChoicePage> {
                 ),
               ));
         },
-        model: ShopChoiceModel());
+        model: ShopChoiceViewModel());
   }
 }

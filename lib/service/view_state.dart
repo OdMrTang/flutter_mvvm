@@ -1,7 +1,7 @@
 
 /// 页面状态类型
 enum ViewState {
-  idle,
+  idle, //初始化
   busy, //加载中
   empty, //无数据
   error, //加载失败

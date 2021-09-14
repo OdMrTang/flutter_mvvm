@@ -1,7 +1,7 @@
 
 import 'package:jvtd_shop_client/commons/nets/http.dart';
-import 'package:jvtd_shop_client/models/user.dart';
-import 'package:jvtd_shop_client/models/verification_info.dart';
+import 'package:jvtd_shop_client/models/user_model.dart';
+import 'package:jvtd_shop_client/models/verification_info_model.dart';
 
 class UserRepository {
 
@@ -22,7 +22,7 @@ class UserRepository {
 
   static Future getVerificationInfo() async {
     var response = await http.netFetch('shop_certification/clear/', method: "get");
-    return VerificationInfo.fromJson(response.data);
+    return VerificationInfoModel.fromJson(response.data);
   }
 
   static Future createVerificationInfo(data) async {

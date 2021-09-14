@@ -1,10 +1,10 @@
-class School {
+class SchoolModel {
   int id;
   String name;
 
-  School({this.id, this.name});
+  SchoolModel({this.id, this.name});
 
-  School.fromJson(Map<String, dynamic> json) {
+  SchoolModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
   }

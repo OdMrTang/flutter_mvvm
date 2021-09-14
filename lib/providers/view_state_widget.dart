@@ -2,8 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:jvtd_shop_client/commons/constants/string.dart';
 import 'package:jvtd_shop_client/commons/managers/resource_mananger.dart';
-import 'package:shimmer/shimmer.dart';
-
 import 'view_state.dart';
 
 /// 加载中
@@ -12,23 +10,24 @@ class ViewStateBusyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: Center(
-        child: SizedBox(
-          width: 200.0,
-          height: 100.0,
-          child: Shimmer.fromColors(
-            baseColor: Colors.grey,
-            highlightColor: Colors.white,
-            child: Column(
-              children: <Widget>[
-
-                Image.asset(ImageHelper.wrapAssets('splash_flutter.png'),
-              width: 100),
-              ],
-            ),
-          ),
-        ),
-      ),
+      child: Container(),
+      // child: Center(
+      //   child: SizedBox(
+      //     width: 200.0,
+      //     height: 100.0,
+      //     child: Shimmer.fromColors(
+      //       baseColor: Colors.grey,
+      //       highlightColor: Colors.white,
+      //       child: Column(
+      //         children: <Widget>[
+      //
+      //           Image.asset(ImageHelper.wrapAssets('splash_flutter.png'),
+      //         width: 100),
+      //         ],
+      //       ),
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
