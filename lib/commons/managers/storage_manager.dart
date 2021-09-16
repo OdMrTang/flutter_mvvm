@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:jvtd_shop_client/commons/constants/config.dart';
 import 'package:localstorage/localstorage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
